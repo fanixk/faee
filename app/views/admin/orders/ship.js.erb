@@ -1,0 +1,5 @@
+$('#order_'+<%= @order.id %>).find('.ship-order-btn').hide();
+$('#order_'+<%= @order.id %>).find('.cancel-order-btn').hide();
+$('#order_'+<%= @order.id %>).find('.complete-order-btn').show();
+$('#shipped-orders').append($('#order_'+<%= @order.id %>));
+$('#order_'+<%= @order.id %>).find('.dash_order_state span.label').text("shipped");

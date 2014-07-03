@@ -1,0 +1,27 @@
+# config/application.yml
+defaults: &defaults
+  twitter_auth: true
+  fb_auth: true
+
+development:
+  <<: *defaults
+  TWITTER_API_KEY: 'key'
+  TWITTER_API_SECRET: 'secret'
+  FB_API_KEY: 'key'
+  FB_API_SECRET: 'secret'
+  billing_address: 
+    name: 'Mpampis Sougias'
+    address: 'Toumpa 2'
+    city: 'Thesalloniki'
+    country: 'GR'
+    zip: '12345'
+  gateway:
+    login: 'username'
+    password: 'password'
+    token: 'token'
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

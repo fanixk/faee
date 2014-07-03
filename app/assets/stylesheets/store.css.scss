@@ -1,0 +1,175 @@
+// Place all the styles related to the store controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+ *= require carts
+ *= require_self
+ */
+ 
+.categories-menu {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: right;
+  .nav > li > a:hover, .nav-list > .active > a {
+    background-color: #F9F9F9 !important;
+    text-decoration: none;
+    text-shadow: none;
+    background-color: #FFF;
+    color: #1B1B1B;
+    -webkit-border-right: 3px solid #B9C43A;
+    -moz-border-right: 3px solid #B9C43A;
+    border-right: 3px solid #B9C43A;
+  }
+  .nav-header {
+    font-size: 15px;
+  }
+}
+
+.product-modal-descr {
+	padding-top: 15px;
+}
+
+#product_grid {
+	.fixed-category {
+		position: fixed;
+		bottom: 5px;
+		left: 0px;
+		opacity: 0.5;
+		display: none;
+	}
+	.product {
+	  background: #fff;
+	  position: relative;
+	  height: 280px;
+	  max-height: 280px;
+	  .product_name, 
+		.product_descr, 
+		.product_category {
+		  margin: 5px;
+		  white-space: nowrap;
+		  overflow: hidden;
+		  .paragraph-end {
+			  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255,255,255,0)), to(rgba(255,255,255,1)));
+			  background-image: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1));
+			  background-image: -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1));
+			  background-image: -o-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1));
+			  background-image: linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1));
+			  background: linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,1));
+			  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#00ffffff',EndColorStr='#ffffff');
+			  position: absolute;
+			  max-height: 100%;
+			  height: 20px;
+			  right: 18px;
+			  width: 65px;
+		  }
+		}
+		h4.prod-category {
+			margin: 0
+		}
+		.product_image {
+		  margin-bottom: 7px;
+		}
+		.product_price {
+		  background: white;
+		  color: #252525;
+		  position: absolute;
+		  top: 0px;
+		  right: 0px;
+		  font-weight: bold;
+		  font-size: 18px;
+		  padding: 8px 8px 7px 7px;
+		  border: 1px solid #ddd;
+		  -webkit-border: 1px solid #ddd;
+		  -moz-border: 		1px solid #ddd;
+		  -webkit-transition: all 0.33s ease-in-out;
+			-moz-transition: all 0.33s ease-in-out;
+			transition: all 0.33s ease-in-out;
+		}
+		.product_descr {
+		  margin-bottom: 15px;
+		}
+		.product_category {
+		  font-size: 10px;
+		  display: inline-block;
+		}
+		.thumbnail {
+			height: 270px;
+			.caption a {
+				text-decoration: none;
+			}
+			.img-container {
+				height: 150px;
+				line-height: 150px;
+				text-align: center;
+				img {
+   				vertical-align: middle;
+				}
+			}
+		}
+		.thumbnail:hover {
+			border: 1px solid #b9c45a;
+			-webkit-border: 1px solid #b9c45a;
+			-moz-border: 		1px solid #b9c45a;
+			.product_price {
+				background: #F9F9F9;
+			  -webkit-border-top: 1px solid #b9c45a;
+				-moz-border-top: 1px solid #b9c45a;
+				border-top: 1px solid #b9c45a;
+			  -webkit-border-right: 1px solid #b9c45a;
+				-moz-border-right: 1px solid #b9c45a;
+				border-right: 1px solid #b9c45a;
+			}
+		}
+	}
+}
+
+#product-price-modal {
+	background: white;
+	color: #333;
+	position: absolute;
+	top: -1px;
+	right: 0px;
+	font-weight: bold;
+	font-size: 22px;
+	padding: 8px 8px 7px 7px;
+	border: 1px solid #ddd;
+	-webkit-border: 1px solid #ddd;
+	-moz-border: 		1px solid #ddd;
+}
+
+.spinner {
+	display:none;
+	margin: 0;
+	position: absolute;
+	top: 285px;
+	right: 0px;
+	font-size: 16px;
+}
+
+/* Landscape phone to portrait tablet */
+@media (min-width: 768px) and (max-width: 1048px) { 
+	#product_grid {
+	  .product {
+		  margin-bottom: 40px;
+		  height: 300px !important;
+		  max-height: 300px !important;
+		}
+		.thumbnail {
+			height: 290px !important;
+		}
+		.spinner {
+			position: absolute;
+			top: 305px;
+			right: 0px;
+		}
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+  #product_grid {
+  	.product {
+  		margin-bottom: 30px;
+  	}
+  }
+}

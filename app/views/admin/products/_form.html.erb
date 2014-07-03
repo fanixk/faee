@@ -1,0 +1,59 @@
+<%= form_for([:admin, @product], :html => { :multipart => true, class: 'form-horizontal' }) do |f| %>
+  <%= render 'shared/error_messages', :target => @product, :name => "product" %>
+  
+  <fieldset>
+
+  <div class="control-group">
+    <%= f.label :name, t('.Name'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :category_id, t('.Category'), class: "control-label" %>
+    <div class="controls">
+      <%= f.collection_select :category_id,
+                            Category.all, 
+                            :id, 
+                            :name, 
+                            { :prompt => "Select a Category" }, { class: 'chosen-select' } %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :description, t('.Description'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_area :description, :rows => 5 %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :price, t('.Price'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :price %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :photo, t('.Photo'), class: "control-label" %>
+    <div class="controls">
+      <%= f.file_field :photo %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit :class => 'btn btn-success', :value => t('.Submit') %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= link_to admin_products_path, :class => 'btn btn-inverse' do %>
+      <i class="icon-chevron-left icon-white"></i> <%= t('.Back to products') %>
+    <% end %>
+  </div>
+
+  </fieldset>
+
+<% end %>

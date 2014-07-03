@@ -1,0 +1,6 @@
+$modal = $('.modal'),
+$modalBody = $('.modal .modal-body'),
+$modalHeading = $('.modal .modal-heading');
+$modalHeading.html("<%= @address.full_address %>");
+$modalBody.html("<%= j render @address %>");
+$modal.modal();

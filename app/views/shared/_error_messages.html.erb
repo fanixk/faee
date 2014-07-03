@@ -1,0 +1,11 @@
+<% if target.errors.any? %>
+    <div class="alert alert-error alert-block">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      <h4><%= pluralize(target.errors.count, "error") %> <%= t('.prohibited this') %> <%= name %> <%= t('.from being saved') %>:</h4>
+      <ul>
+      <% target.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>

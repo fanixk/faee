@@ -1,0 +1,14 @@
+<div class="categories-menu">
+  <ul class="nav nav-list">
+    <li class="nav-header"><i class="icon icon-tags"></i> <%= t('.Categories') %></li>
+    <li class="divider"></li>
+    <li <%= 'class=active' if (current_page?(store_index_path(:category_id => '0')) || current_page?(root_path) || current_page?(store_index_path))%>>
+      <%= link_to t('.All'), store_index_path(:category_id => '0') %>
+    </li>
+      <% @options.each do |option| %>
+        <li <%= 'class=active' if current_page?(store_index_path(:category_id => option.id)) %>>
+        <%= link_to option.name, store_index_path(:category_id => option.id) %>
+        </li>
+      <% end %>
+  </ul>
+</div>

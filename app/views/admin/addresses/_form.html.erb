@@ -1,0 +1,69 @@
+<%= form_for [:admin, :user, @address], html: { class: 'form-horizontal' } do |f| %>
+  <%= render 'shared/error_messages', :target => @address, :name => "address" %>
+  
+  <fieldset>
+
+  <div class="control-group">
+    <%= f.label :label, t('.Label'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :label %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :street_name, t('.Street Name'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :street_name %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :street_num, t('.Street Number'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :street_num %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :zipcode, t('.ZipCode'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :zipcode %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :region, t('.Region'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :region %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :phone, t('.Phone'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :phone %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :comment, t('.Comment'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_area :comment, :rows => 1 %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit :value => t('.Submit'), :class => 'btn btn-success' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= link_to admin_users_path, :class => 'btn btn-inverse' do %>
+      <i class="icon-chevron-left icon-white"></i> <%= t('.Back to Users') %>
+    <% end %>
+  </div>
+
+  </fieldset>
+  
+<% end %>

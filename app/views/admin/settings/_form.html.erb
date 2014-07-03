@@ -1,0 +1,31 @@
+<%= form_for([:admin, @setting], html: { class: 'form-horizontal' }) do |f| %>
+  <%= render 'shared/error_messages', :target => @setting, :name => "setting" %>
+ 
+  <fieldset>
+
+  <div class="control-group">
+    <%= f.label :position, t('.' + @setting[:key]), class: "control-label" %>
+    <div class="controls">
+      <% if @setting[:key] == 'locale' %>
+        <%= f.select :value, options_for_select(I18n.available_locales) %>
+      <% else %>
+        <%= f.text_field :value %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit :class => 'btn btn-success',:value => t('.Submit') %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= link_to admin_settings_path, :class => 'btn btn-inverse' do %>
+      <i class="icon-chevron-left icon-white"></i> <%= t('.Back to Settings') %>
+    <% end %>
+  </div>
+
+  </fieldset>
+
+<% end %>

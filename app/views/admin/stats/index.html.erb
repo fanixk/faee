@@ -1,0 +1,32 @@
+<div id="stats-page"></div>
+<%= render 'stats_row' %>
+
+<div class="accordion" id="chart-accordion" style="margin-top: 20px;">
+  <div class="accordion-group">
+    <div class="accordion-heading day">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#chart-accordion" href="#chart-day">
+        <%= t('.Day') %>
+      </a>
+    </div>
+    <div id="chart-day" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        <div id="orders_charts_day" data-chart="<%= orders_chart_day %>">
+  </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading month">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#chart-accordion" href="#chart-month">
+        <%= t('.Month') %>
+      </a>
+    </div>
+    <div id="chart-month" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <div id="orders_charts_month" data-chart="<%= orders_chart_month %>" style="margin-top: 20px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <%= stylesheet_link_tag "application", "store", :media => "all" %>
+  <%= javascript_include_tag "application", "store" %>
+  <%= csrf_meta_tags %>
+  <%= yield(:head) %>
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->    
+  <%= google_webfonts_link_tag "Ubuntu" => [300, 400, 500, 700] %>
+</head>
+<body class="<%= split_path %>">
+  <%= render 'shared/header' %>
+  <%= render 'shared/extra_header' %>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span2">
+        <%= render 'store/store_sidebar' %>
+      </div>
+      <div class="span2 pull-right">
+        <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+          <%= render 'carts/front_cart', cart: @cart %>
+        <% end %>
+      </div> 
+      <div class="span8" id="product_grid">
+        <%= render 'shared/notice_messages' %>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

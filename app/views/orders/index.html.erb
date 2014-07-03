@@ -1,0 +1,32 @@
+<div id="user-orders" class="row-fluid">
+<legend><%= t('.Your current orders') %></legend>
+	<div class="span12 thumbnails">
+		<% @orders.each do |order| %>
+      <div class="thumbnail <%= "open" if order.state == 'open' %><%= "shipped" if order.state == 'shipped' %>">
+        <div><strong><%= t('.Order Number') %>:</strong> <%= order.id %></div>
+        <div><strong><%= t('.Address') %>:</strong> <%= order.address.full_address %></div>
+        <div><strong><%= t('.Products') %>:</strong><br/>
+        			<% order.line_items.each do |item| %>
+								<%= item.quantity %> x <%= item.product.name %>
+								<br/>
+        			<% end %>
+        </div>
+        <div><strong><%= t('.Price') %>:</strong> <%= number_to_currency(order.price, :unit => "€") %></div>
+        <div><strong><%= t('.State') %>:</strong>
+        	<% if order.state == 'open' %>
+        	<span class="label label-info"><%= t('.Your order is being prepared') %></span>
+        	<% elsif order.state == 'shipped' %>
+        	<span class="label label-success"><%= t('.Your order is on the way') %></span>
+        	<% end %>
+        </div>
+        <div>
+        	<% if order.state == 'open' %>
+        	<strong><%= t('.Purchased At') %>:</strong> <%= order.purchased_at.strftime("%d-%m-%Y %H:%M:%S") %>
+        	<% elsif order.state == 'shipped' %>
+        	<strong><%= t('.Shipped At') %>:</strong> <%= order.shipped_at.strftime("%d-%m-%Y %H:%M:%S") %>
+        	<% end %>
+        </div>
+      </div>
+    <% end %>
+	</div>
+</div>

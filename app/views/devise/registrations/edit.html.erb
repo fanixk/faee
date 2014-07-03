@@ -1,0 +1,91 @@
+<%= devise_error_messages! %>
+<legend><%= t('.Edit Your Profile') %></legend>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, class: 'form-horizontal' }) do |f| %>
+  
+  <fieldset>
+
+  <div class="control-group">
+    <%= f.label :first_name, t('.First Name'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :first_name, :autofocus => true %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :last_name, t('.Last Name'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :last_name %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :username, t('.Username'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :username %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :email, t('.E-Mail'), class: "control-label" %>
+    <div class="controls">
+      <%= f.email_field :email %>
+    </div>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div class="alert alert-info">
+      <%= t('.Currently waiting confirmation for:') %><%= resource.unconfirmed_email %>
+    </div>   
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :password, t('.New Password'), class: "control-label" %>
+    <div class="controls">
+      <%= f.password_field :password, :autocomplete => "off" %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :password_confirmation, t('.New Password Confirmation'), class: "control-label" %>
+    <div class="controls">
+      <%= f.password_field :password_confirmation %>
+    </div>
+  </div>
+
+  <% if f.object.encrypted_password.present? %>
+    <div class="control-group">
+      <%= f.label :current_password, t('.Current Password'), class: "control-label" %>
+      <div class="controls">
+        <%= f.password_field :current_password %>
+      </div>
+    </div>   
+  <% end %>
+
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit :class => 'btn btn-success', :value => t('.Submit') %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= link_to :back, :class => 'btn btn-inverse pull-left' do %>
+      <i class="icon-chevron-left"></i> <%= t('.Back') %>
+    <% end %>
+  </div>
+
+
+
+  </fieldset>
+     
+<% end %>
+    
+<% if !current_user.admin? %>
+  <br>
+  <div class="control-group">
+    <h4 class="control-label"><%= t('.Unhappy?') %> <i class="icon-thumbs-down"></i></h4>
+    <div class="controls">
+      <%= button_to t('.Cancel my account'), registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-warning cancel-usr' %>
+    </div>
+  </div>     
+<% end %>

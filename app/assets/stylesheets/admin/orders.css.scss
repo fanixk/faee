@@ -1,0 +1,20 @@
+// Place all the styles related to the admin/orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.icon-cog-custom {
+  text-decoration: none;
+  font-size: 22px;
+  color: darken(#252525, 10%);
+}
+
+.icon-cog-custom:hover,
+.icon-cog-custom:focus,
+.icon-cog-custom:active {
+	text-decoration: none;
+	color: lighten(#252525, 40%);
+}
+
+.orders table {
+	min-width: 80%;
+}

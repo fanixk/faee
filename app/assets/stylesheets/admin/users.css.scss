@@ -1,0 +1,40 @@
+// Place all the styles related to the admin/users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#user_det {
+	margin-bottom: 15px;
+	font-size: 1.2em;
+}
+
+#user_addr {
+	margin-left: 0px !important;
+	.btn-new-custom {
+		margin-bottom: 15px;
+	}
+}
+
+#no_addr {
+	text-align: center;
+}
+
+.icon-map-custom {
+  color: #41441F;
+  font-size: 22px;
+}
+.icon-map-custom:hover {
+  text-decoration: none;
+  color: lighten(#41441F, 20%);
+}
+.icon-truck-custom{
+  color: darken(#5BB65B, 20%);
+  font-size: 22px;  
+}
+.icon-truck-custom:hover {
+  text-decoration: none;
+  color: saturate(#5BB65B, 20%);
+}
+
+.users table {
+  min-width: 80%;
+}

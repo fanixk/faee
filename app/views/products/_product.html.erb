@@ -1,0 +1,11 @@
+<p id="product-price-modal" class="pull-right">
+	<%= number_to_currency(product.price, unit: '€') %>
+</p>
+
+<div class="image-product pagination-centered"> 
+  <img data-src="holder.js/150x150" alt="<%= product.name %>" src="<%= product.photo.url(:medium) %>">
+</div>
+
+<p class="word-wrap muted product-modal-descr">
+	<%= product.description %>
+</p>

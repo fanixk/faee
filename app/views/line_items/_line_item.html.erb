@@ -1,0 +1,13 @@
+<% if line_item == @current_item %>
+  <div class="row-fluid" id="current_item">
+<% else %>
+  <div class="row-fluid">
+<% end %>
+  <%= link_to  line_item_path(line_item), method: :delete, remote: true, class: 'item_remove', title: I18n.t('.Remove item') do %>
+    <i class="span1 icon-minus-sign icon-delete-custom-sm"></i>
+  <% end %>
+  <p class="span2 item_quantity"><%= line_item.quantity %> &times;</p>
+  <p class="span7 item_name"><%= line_item.product.name %></p>
+  <p class="span2 item_price"><%= number_to_currency(line_item.total_price, :unit => "€ ") %></p>
+</div>
+<hr>

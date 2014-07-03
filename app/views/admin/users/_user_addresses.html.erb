@@ -1,0 +1,48 @@
+<% if @user.addresses.any? %>
+  <table class="table table-striped table-condensed">
+    <thead>
+      <tr>
+        <th><%= t('.Label') %></th>
+        <th><%= t('.FullAddress') %></th>
+        <th><%= t('.ZipCode') %></th>
+        <th><%= t('.Region') %></th>
+        <th><%= t('.Phone') %></th>
+        <th><%= t('.Comment') %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.addresses.each do |address| %>
+        <tr>
+          <td><%= address.label %></td>
+          <td><%= address.full_address %></td>
+          <td><%= address.zipcode %></td>
+          <td><%= address.region %></td>
+          <td><%= address.phone %></td>
+          <td><%= address.comment %></td>
+          <td class="text-center">
+            <%= link_to [:admin, @user, address], :class => "icon-map-custom", :title => I18n.t('.Show map'), :remote => true do %>
+              <i class="icon-map-marker"></i>
+            <% end %>
+          </td>
+          <td class="text-center">
+            <%= link_to edit_admin_user_address_path(@user, address), :class => "icon-edit-custom", :title => I18n.t('.Edit') do %>
+              <i class="icon-edit"></i>
+            <% end %>
+          </td>
+          <td class="text-center">
+            <%= link_to [:admin, @user, address], :confirm => 'Are you sure?', :method => :delete, :class => "icon-delete-custom", :title => I18n.t('.Delete') do %>
+              <i class="icon-minus-sign"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div id="no_addr" class="alert alert-error"><%= t('.NoAddressesFound') %></div>
+  <div class="clearfix"></div>
+<% end %>
+<%= render "shared/modal" %>

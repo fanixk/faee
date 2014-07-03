@@ -1,0 +1,58 @@
+<% provide :title, 'Store' %>
+<% int = 0 %>
+
+<% @products.each do |product| %>
+  <% int += 1 %>
+  <% if int%3 == 1 %>
+    <% count = 'first' %>
+    <div class="row-fluid">
+      <ul class="thumbnails">
+  <% elsif int%3 == 0  %>
+    <% count = 'third' %>
+  <% else %>
+    <% count = 'second' %>
+  <% end %>
+  <li class="span4 product <%= count %>">
+    <div class="thumbnail">
+      <div class="img-container">
+        <%= link_to store_path(product), remote: true do %>
+          <img data-src="holder.js/150x150" alt="<%= product.name %>" src="<%= product.photo.url(:small) %>" class=" data-toggle="tooltip" title='<%= t(".Show more") %>'">
+        <% end %>
+      </div>
+      <div class="caption">
+        <%= link_to store_path(product), remote: true do %>
+          <h4 class="product_name"><%= product.name %><span class="paragraph-end"></span></h4>
+        <% end %>
+        <h4 class="prod-category">
+          <p class="product_category">
+            <small><i class="icon icon-tag"></i> <%= product.category_name %></small>
+          </p>
+        </h4>
+        <p class="product_price">
+          <%= number_to_currency(product.price, unit: "€", locale: :en) %>
+        </p>
+        <p>
+          <p class="spinner">
+            <i class='icon-spinner icon-spin icon-large'></i> <%= t('.One Item Added') %>
+          </p>
+          <%= link_to line_items_path(product_id: product), :class => "btn btn-add pull-right", :method => :post, remote: true do %>
+            <i class="icon icon-shopping-cart"></i> <%= t('.Add to cart') %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </li>
+
+  <% if count == 'third' %>
+    </ul>
+    </div>
+  <% end %>
+<% end %>
+  
+<% if @category.blank? || params[:category_id] == '0' %>
+  <h4 class="span2 fixed-category hidden-phone"><i class="icon icon-tags"></i> <%= t('.All') %></h4>
+<% else %>
+  <h4 class="span2 fixed-category hidden-phone"><i class="icon icon-tag"></i> <%= @category.name %></h4>
+<% end %>
+
+<%= render 'shared/modal' %>

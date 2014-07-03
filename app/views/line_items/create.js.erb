@@ -1,0 +1,4 @@
+if($('.inner-cart').data('count') >= 0) {
+  $('#cart').show('blind');
+}
+$('#cart').html("<%=j render 'carts/front_cart', cart: @cart %>");

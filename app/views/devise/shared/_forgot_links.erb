@@ -1,0 +1,17 @@
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+  <%= link_to new_password_path(resource_name), :class => 'btn btn-warning' do %>
+  	<i class="icon-ambulance "></i> <%= t('.Forgot your password?') %>
+  <% end %>
+<% end -%>
+
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <%= link_to new_confirmation_path(resource_name), :class => 'btn btn-warning' do %>
+  	<i class="icon-hospital "></i> <%= t('.Did not receive confirmation instructions?') %>
+  <% end %>
+<% end -%>
+
+<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  <%= link_to new_unlock_path(resource_name), :class => 'btn btn-warning' do %>
+  	<i class="icon-user-md "></i> <%= t('.Did not receive unlock instructions?') %>
+  <% end %>
+<% end -%>

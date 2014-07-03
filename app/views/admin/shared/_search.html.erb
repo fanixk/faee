@@ -1,0 +1,18 @@
+<%= search_form_for search, url: url, method: :post, :class => 'search-form' do |f| %>
+  <fieldset>
+    <div class="sort-field">
+      <legend><%= t('.Sort by') %></legend>
+      <%= f.sort_fields do |s| %>
+        <%= s.sort_select %>
+      <% end %>
+    </div>
+    <div class="search-field">
+      <legend><%= t('.Search conditions') %></legend>
+        <%= f.condition_fields do |c| %>
+          <%= render "condition_fields", f: c %>
+        <% end %>
+        <p><%= link_to_add_fields t('.Add Conditions'), f, :condition %></p>
+    </div>
+    <%= f.submit :class => 'btn btn-success', :value => t('.Search') %>
+  </fieldset>
+<% end %>

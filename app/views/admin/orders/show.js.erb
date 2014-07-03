@@ -1,0 +1,6 @@
+$modal = $('.modal'),
+$modalBody = $('.modal .modal-body'),
+$modalHeading = $('.modal .modal-heading');
+$modalHeading.html("<%= I18n.t('.Products') %>");
+$modalBody.html("<%= j render 'admin/orders/line_items', order: @order %>");
+$modal.modal();

@@ -1,0 +1,13 @@
+<% if flash %>
+  <% flash.each do |name, msg| %>
+    <% if flash[:alert] %>
+      <div class="alert alert-error">
+    <% else %>
+      <div class="alert alert-success">
+    <% end %>
+
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <%= content_tag :section, msg, :id => "flash_#{name}", :class => "flash" %>
+    </div>
+  <% end %>
+<% end %>

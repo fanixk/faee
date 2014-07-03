@@ -1,0 +1,217 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require _font-awesome
+ *= require_self
+ *= require bootstrap_and_overrides
+ *= require bootstrap_flatten
+ *= require orders
+ *= require carts
+ *= require chosen
+ */
+
+.navbar-fixed-top {
+  .lang {
+    i {
+      position: relative;
+      top: 2px;
+    }    
+  }
+}
+    
+.primary-user-menu {
+  position: relative;
+  top: 5px;
+  a, small {
+    text-decoration: none;
+    float: right;
+    color: #1B1B1B;
+    margin: 4px;
+    padding: 4px;
+  }
+  a:hover, .active a {
+    text-decoration: none;
+    color: #B9C43A;
+    -webkit-border-right: 3px solid #1B1B1B;
+    -moz-border-right: 3px solid #1B1B1B;
+    border-right: 3px solid #1B1B1B;
+  }
+  i {
+    font-size: 24px;
+  }
+  li {
+    list-style: none;
+  }
+}
+
+.word-wrap { 
+  word-wrap: break-word;
+}
+
+#logo {
+  float: left;
+  font-weight: bold;
+  min-height: 34px;
+  font-size: 1.8em;
+  letter-spacing: 0px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 2.0em;    
+  color: white;
+  background-color: #252525 !important;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 40px;
+  line-height: 40px;
+  img {
+    height: 26px;
+    padding-bottom: 3px;
+  }
+}
+
+.extra-header {
+  background-color: #F9F9F9;
+  hr {
+    margin-bottom: 0px;
+  }
+  .logo {
+    img {
+      position: relative;
+      top: 17px;
+      -webkit-animation-name: spin;
+      -webkit-animation-duration: 10000ms;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+      -moz-animation-name: spin;
+      -moz-animation-duration: 10000ms;
+      -moz-animation-iteration-count: infinite;
+      -moz-animation-timing-function: linear;
+      -ms-animation-name: spin;
+      -ms-animation-duration: 10000ms;
+      -ms-animation-iteration-count: infinite;
+      -ms-animation-timing-function: linear;
+        
+      animation-name: spin;
+      animation-duration: 10000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    @-ms-keyframes spin {
+        from { -ms-transform: rotate(0deg); }
+        to { -ms-transform: rotate(360deg); }
+    }
+    @-moz-keyframes spin {
+        from { -moz-transform: rotate(0deg); }
+        to { -moz-transform: rotate(360deg); }
+    }
+    @-webkit-keyframes spin {
+        from { -webkit-transform: rotate(0deg); }
+        to { -webkit-transform: rotate(360deg); }
+    }
+    @keyframes spin {
+        from {
+            transform:rotate(0deg);
+        }
+        to {
+            transform:rotate(360deg);
+        }
+    }
+    .promo {
+      text-decoration: none;
+      color: #B9C43A;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.btn-new-custom {
+  background-color: whitesmoke !important;
+  border-left: 3px whitesmoke solid !important;
+  border-top: 0px !important;
+  border-bottom: 0px !important;
+  border-right: 0px !important;
+  color: #1B1B1B !important;
+  text-shadow: none !important;
+}
+.btn-new-custom:hover {
+  background-color: #E6E7E8 !important;
+  border-left: 3px #1B1B1B solid !important;
+  border-top: 0px !important;
+  border-bottom: 0px !important;
+  border-right: 0px !important;
+  text-shadow: none !important;
+}
+
+.icon-edit-custom {
+  color: darken(#5A84C4, 20%);
+  font-size: 22px;
+}
+.icon-edit-custom:hover {
+  text-decoration: none;
+  color: saturate(#5A84C4, 20%);
+}
+
+.icon-delete-custom {
+  color: darken(#C4655A, 20%);
+  font-size: 22px;  
+}
+.icon-delete-custom:hover {
+  text-decoration: none;
+  color: saturate(#C4655A, 20%);
+}
+
+#user_remember_me, 
+#page_is_published,
+#page_is_homepage,
+#page_in_menu,
+#user_admin {
+  width: 30px;
+  height: 23px !important;
+}
+
+ul.dropdown-menu li a {
+  font-size: 115%;
+}
+
+.navbar-fixed-top {
+  .navbar-inner {
+    padding: 0px !important;
+  }
+} 
+
+.home,
+.store {
+  .container-fluid {
+    background-color: #F9F9F9;
+  }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  #logo {
+    left: -5px;
+    position: absolute;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+  padding-top: 0;
+  .navbar-fixed-top {
+    margin-bottom: 0px !important;
+  }
+  #logo {
+    left: 5px !important;;
+    position: absolute;
+  }
+}

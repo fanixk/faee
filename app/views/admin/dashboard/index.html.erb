@@ -1,0 +1,32 @@
+<%= render 'shared/modal' %>
+
+<div class="row-fluid">
+  <div id="show_orders" class="alert alert-block alert-success" style="display:none;">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <h4><i class="icon-exclamation-sign"> <%= t(".More orders have recently been added") %> </i><a href="#" class="btn btn-small"><%= t(".Show Orders") %></a></h4>
+  </div>
+  <% if @orders.count == 0  %>
+    <div id="zero-pending-orders" class="alert alert-block alert-info">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      <h4><i class="icon-info-sign"> <%= t(".0 pending open orders") %> </i></h4>
+    </div>
+  <% end %>
+</div>
+<div class="row-fluid" id="dashboard-orders">
+  <div class="span6" id="open-orders">
+  <legend><%= t(".Open Orders") %></legend>
+    <%= content_tag :div, id: 'orders', :class => 'row-fluid', data: {url: admin_dashboard_url } do %>
+      <div class="thumbnails">
+        <%= render @orders %>
+      </div>
+    <% end %>
+  </div>
+  <div class="span6" id="shipped-orders">
+  <legend><%= t(".Shipped Orders") %></legend>
+    <div class="thumbnails">
+      <% @shipped_orders.each do |order| %>
+        <%= render order %>
+      <% end %>
+    </div>
+  </div>
+</div>

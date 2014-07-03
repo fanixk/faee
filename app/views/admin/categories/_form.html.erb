@@ -1,0 +1,27 @@
+<%= form_for([:admin, @category], html: { class: 'form-horizontal' }) do |f| %>
+  <%= render 'shared/error_messages', :target => @category, :name => "category" %>
+  
+  <fieldset>
+
+  <div class="control-group">
+    <%= f.label :name, t('.Name'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit :class => 'btn btn-success', :value => t('.Submit') %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= link_to admin_categories_path, :class => "btn btn-inverse"  do %>
+      <i class="icon-chevron-left  icon-white"></i> <%= t('.Back to categories') %>
+    <% end %>
+  </div>  
+
+  </fieldset>
+
+<% end %>

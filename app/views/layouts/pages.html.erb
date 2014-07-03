@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <%= stylesheet_link_tag "application", "pages", :media => "all" %>
+  <%= javascript_include_tag "application", "pages" %>
+  <%= csrf_meta_tags %>
+  <%= yield(:head) %>
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  <%= google_webfonts_link_tag "Ubuntu" => [300, 400, 500, 700] %>
+</head>
+<body class="<%= split_path %>">
+  <%= render 'shared/header' %>
+  <%= render 'shared/extra_header' %>
+
+  <div class="container-fluid">
+    <%= yield %>  
+  </div>
+  
+</body>
+</html>

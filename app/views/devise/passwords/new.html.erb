@@ -1,0 +1,24 @@
+<%= devise_error_messages! %>
+<legend><%= t('.Forgot your password?') %></legend>
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, class: 'form-horizontal' }) do |f| %>
+
+  <fieldset>
+
+  <div class="control-group">
+    <%= f.label :email, t('.E-Mail'), class: "control-label" %>
+    <div class="controls">
+    	<%= f.email_field :email, :autofocus => true %>
+    </div>
+  </div>
+
+  <div class="control-group btn-group">
+    <div class="controls">
+    	<%= f.submit :class => 'btn btn-success', :value => t('.Send Me Instructions') %>
+    </div>
+  </div>
+
+  </fieldset>
+
+<% end %>
+  

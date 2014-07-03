@@ -1,0 +1,41 @@
+// Place all the styles related to the Orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.orders.new {
+  .info-sign {
+    .icon-info-sign {  
+      font-size: 120%;
+    }
+    .btn {
+      vertical-align: 1px !important;
+    }
+    .btn-large {
+      padding: 6px 13px;
+      font-size: 21px;
+    }
+  }
+}
+
+
+#order-credit-card {
+	display: none;
+}
+
+#user-orders {
+	.thumbnail {
+    margin-top: 20px !important;
+  }
+  .open {
+    background-color: #F9F9F9 !important;
+  }
+  .shipped {
+    background-color: #EBEBEB !important;
+  }
+  .thumbnail:hover {
+    background-color: #FEFEFE !important;
+    border: 1px solid #b9c45a;
+    -webkit-border: 1px solid #b9c45a;
+    -moz-border:    1px solid #b9c45a;
+  }
+}

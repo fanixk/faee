@@ -1,0 +1,43 @@
+<%= div_for order, data: {id: order.id}, :class => 'thumbnail' do %>
+  
+  <div class="dash_order_id">
+    <strong><%= t(".Id") %>: </strong><%= order.id %>
+  </div>
+
+  <div class="dash_user_info">
+    <strong><%= t(".Name") %>: </strong><%= order.user.full_name %>
+  </div>
+  
+  <div class="dash_user_address">
+    <div>
+      <strong><%= t(".Full Address") %>: </strong><%= order.address.full_address %>
+    </div>
+  </div>
+    
+  <div>
+    <%= link_to admin_order_path(order), title: I18n.t('.Show products'), remote: true do %>
+      <i class="icon-food icon-food-custom"></i>
+    <% end %>  
+  </div>
+
+  <div class="dash_order_price">
+    <strong><%= t(".Total price") %>: </strong>€ <%= order.total_price %>
+  </div>
+  
+  <div class="dash_order_state">
+    <strong><%= t(".State") %>: </strong><span class="label"><%= order.state %></span>
+  </div>
+  
+  <div class="dash_order_controls btn-group">
+    <%= link_to admin_order_cancel_path(order), class: 'btn btn-small btn-danger cancel-order-btn', style: order.can_cancel? ? 'display:inline' : 'display:none', method: 'patch', remote: true do %>
+      <%= t(".Cancel") %>
+    <% end %>
+    <%= link_to admin_order_ship_path(order), class: 'btn btn-small btn-primary ship-order-btn', style: order.can_ship? ? 'display: inline' : 'display: none', method: 'patch', remote: true do %>
+      <%= t(".Ship") %>
+    <% end %>
+    <%= link_to admin_order_complete_path(order), class: 'btn btn-small btn-success complete-order-btn', style: order.can_complete? ? 'display:inline': 'display:none;', method: 'patch', remote: true do %>
+      <%= t(".Complete") %>
+    <% end %>
+  </div>
+
+<% end %>

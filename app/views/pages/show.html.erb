@@ -1,0 +1,23 @@
+<% provide :title, @page.name %>
+
+<div class="row-fluid">
+  <div class="span2">
+    <li class="nav-header"><i class="icon-folder-open"></i> <%= t('.Subpages') %></li>
+    <%= render 'navmenu_list', pages: @page.root.descendants.arrange %>
+  </div>
+  <div class="span2 pages-sidebar-r pull-right"></div>
+  <div class="span8">
+    <%= render 'shared/notice_messages' %>
+    <% cache @page do %>
+      <ul class="breadcrumb">
+        <% @page.ancestors.each do |page| %>
+          <li><%= link_to page.name, nested_page_path(page) %><span class="divider">/</span></li>
+        <% end %>
+        <li><%= @page.name %></li>
+      </ul>
+      <h3><%= @page.name %></h3>
+      
+      <%= raw @page.content %>
+    <% end %>
+  </div>
+</div>

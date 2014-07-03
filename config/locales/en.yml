@@ -1,0 +1,661 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  Show:           "Show"
+  Edit:           "Edit"
+  Delete:         "Delete"
+  Addresses:      "Addresses"
+  Info:           "Information"
+  Move:           "Move"
+  AddChild:       "Add Child"
+  Show map:       "Show Map"
+  Remove item:    "Remove Item"
+  Price:          "Price"
+  Products:       "Products"
+  Show products:  "Show products"
+
+  layouts:
+    application:
+    pages:
+    store:
+    admin:
+     #navbar
+      Faee:       "Food"
+      Home:       "Home"
+      Profile:    "Profile"
+      Languages:  "Languages"
+      English:    "English"
+      Greek:      "Greek"
+      Logout:     "Logout"
+     #sidebar 
+      Dashboard:      "Dashboard"
+      Products:       "Products"
+      Categories:     "Categories"
+      Pages:          "Pages" 
+      Users:          "Users"
+      Orders:         "Orders"
+      Settings:       "Settings"
+      Statistics:     "Statistics"
+
+  admin:
+    base:
+      condition_fields:
+        remove:       "remove"
+    shared:
+      search:
+        Search:             "Search"
+        Sort by:            "Sort by"
+        Search conditions:  "Search conditions"
+        Add Conditions:     "Add Conditions"
+    products:
+      index:
+        Products:                 "Products"
+        New Product:              "New Product"
+        Name:                     "Name"
+        Category:                 "Category"
+        Description:              "Description"
+        Price:                    "Price"
+        Photo:                    "Photo"
+        Edit:                     "Edit"
+        Destroy:                  "Destroy"
+        Search / Sort:            "Search / Sort"
+        Download catalog (PDF):   "Download catalog (PDF)"
+      form:
+        Name:              "Name"
+        Category:          "Category"
+        Description:       "Description"
+        Price:             "Price"
+        Photo:             "Photo"
+        Submit:            "Submit"
+        Back to products:  "Back to Products"
+      new:
+        New Product:      "New Product"
+      edit:
+        Edit Product:     "Edit Product"
+    categories:
+      index:
+        Categories:         "Categories"
+        New Category:       "New Category"
+        Name:               "Name"
+        Edit:               "Edit"
+        Destroy:            "Destroy"
+        Search / Sort:      "Search / Sort"
+      form:
+        Name:               "Name"
+        Submit:             "Submit"
+        Back to categories: "Back to categories"
+      new:
+        New Category:   "New Category"
+      edit:
+        Edit Category:  "Edit Category"
+    pages:
+      index:
+        Pages:              "Pages"
+        New Page:           "New Page"
+        Name:               "Name"
+        Slug:               "Slug"
+        Is published?:      "Is published?"
+        Search / Sort:      "Search / Sort"
+      form:
+        Name:           "Name"
+        Content:        "Content"
+        Slug:           "Slug"
+        Parent:         "Parent"
+        Position:       "Position"
+        Publish?:       "Publish?"
+        HomePage?:      "HomePage?"
+        Show in menu?:  "Show in menu?"
+        Back to Pages:  "Back to Pages"
+        Submit:         "Submit"
+      new:
+        New Page:   "New Page"
+      edit:
+        Edit Page:  "Edit Page"
+      page:
+        IsPublished:      "Is Published"
+        IsNotPublished:   "Is Not Published"
+        Actions:          "Actions"
+        Show:             "Show"
+        Edit:             "Edit"
+        Add Child:        "Add Child"
+        Delete:           "Delete"
+    users:
+      index:
+        New User:           "New User"
+        Name:               "Full Name"
+        Phone:              "Phone"
+        E-Mail:             "E-Mail"
+        Username:           "Username"
+        Customer?:          "Customer?"
+        Search / Sort:      "Search / Sort"
+      form:
+        First Name:             "First Name"
+        Last Name:              "Last Name"
+        Phone:                  "Phone"
+        E-Mail:                 "E-Mail"
+        Username:               "Username"
+        Password:               "Password"
+        Password Confirmation:  "Password Confirmation"
+        Admin?:                 "Admin?"
+        Back to Users:          "Back to Users"
+        Submit:                 "Submit"
+      new:
+        New User:   "New User"
+      edit:
+        Edit User:  "Edit User"
+      user:
+        User's addresses:  "User's addresses"
+        New Address:       "New Address"
+        Name:              "Full Name"
+        Email:             "E-Mail"
+        Total Spent:       "Total Spent"
+        Total Orders:      "Total Orders"
+        Back to Users:     "Back to Users"
+      user_addresses:
+        New Address:        "New Address"
+        Label:              "Label"
+        FullAddress:        "FullAddress"
+        ZipCode:            "ZipCode"
+        Phone:              "Phone"
+        Region:             "Region"
+        Comment:            "Comment"
+        NoAddressesFound:   "No Addresses Found"
+    settings:
+      index:
+        Key:                        "Name"
+        Value:                      "Value"
+        twitter_api_key:            "Twitter API Key"
+        twitter_api_secret:         "Twitter API Secret"
+        fb_api_key:                 "Facebook API Key"
+        fb_api_secret:              "Facebook API Secret"
+        gateway_login:              "Gateway Login"
+        gateway_password:           "Gateway Password"
+        gateway_token:              "Gateway Token"
+        billing_address_city:       "Billing Address City"
+        billing_address_country:    "Billing Address Country"
+        store_title:                "Store Title"
+        locale:                     "Language"
+      form:
+        Back to Settings:   "Back to Settings"
+        Submit:             "Submit"
+      edit:
+        Edit User:  "Edit Setting"
+    addresses:
+      form:
+        Label:              "Label"
+        Phone:              "Phone"
+        Street Name:        "Street Name"
+        Street Number:      "Street Number"
+        ZipCode:            "ZipCode"
+        Region:             "Region"
+        Comment:            "Comment"
+        Back to Users:      "Back to Users"
+        Submit:             "Submit"
+      new:
+        New Address:  "New Address"
+      edit:
+        Edit User Address: "Edit User Address"
+      address_modal:
+        Close:  "Close"
+    dashboard:
+      index:
+        More orders have recently been added:   "More orders have recently been added."
+        Show Orders:                            "Show Orders"
+        0 pending open orders:                  "There's no pending orders"
+        Open Orders:                            "Open orders"
+        Shipped Orders:                         "Shipped orders"
+    orders:
+      index:
+        Id:                       "ID"
+        PurchasedAt:              "Purchased At"
+        FullName:                 "Full Name"
+        FullAddress:              "Full Address"
+        Price:                    "Price"
+        State:                    "State"
+        Actions:                  "Actions"
+        Ship:                     "Ship"
+        Cancel:                   "Cancel"
+        Resume:                   "Resume"
+        Complete:                 "Complete"
+        No actions available:     "No actions available"
+        Search / Sort:            "Search / Sort"
+        Show Products:            "Show products"
+      condition_fields:
+        remove:       "remove"
+      order:
+        Name:         "Full Name"
+        Full Address: "Full Address"
+        Products:     "Products"
+        Total price:  "Total Price"
+        State:        "State"
+        Ship:         "Ship"
+        Cancel:       "Cancel"
+        Resume:       "Resume"
+        Complete:     "Complete"
+      line_items:
+        Total Price:  "Total price"
+    stats:
+      index:
+        Day:    "Day"
+        Month:  "Month"
+
+  addresses:
+    index:
+      Your Addresses:                        "Your addresses"
+      New Address:                           "New Address"
+      You haven't created an address yet:    "You haven't created an address yet."
+      Name:                                  "Name"
+    form:
+      Label:              "Label"
+      Street Name:        "Street Name"
+      Street Number:      "Street Number"
+      ZipCode:            "ZipCode"
+      Region:             "Region"
+      Phone:              "Phone"
+      Comment:            "Comment"
+      Back to Addresses:  "Back to Addresses"
+      Submit:             "Submit"
+    new:
+      New Address:  "New Address"
+    edit:
+      Edit Address: "Edit Address"
+
+  store:
+    index:
+      Add to cart:     "Add to cart"
+      All:             "All categories"
+      Show more:       "Show More"
+      One Item Added:  "One Item Added"
+    store_sidebar:
+      Categories: "Categories"
+      All:        "All categories"
+
+  devise:
+    confirmations:
+      new:
+        Resend confirmation instructions: "Resend confirmation instructions"
+        E-Mail:                           "E-Mail"
+        Submit:                           "Submit"
+    registrations:
+      new:
+        Sign up:                "Sign Up"
+        First Name:             "First Name"
+        Last Name:              "Last Name"
+        Phone:                  "Phone"
+        Username:               "Username"
+        E-Mail:                 "E-Mail"
+        Password:               "Password"
+        Password Confirmation:  "Password Confirmation"
+        Create your account:    "Create your account"
+      edit:
+        Edit User:                  "Edit User"
+        First Name:                 "First Name"
+        Last Name:                  "Last Name"
+        Phone:                      "Phone"
+        Username:                   "Username"
+        E-Mail:                     "E-Mail"
+        New Password:               "New Password"
+        New Password Confirmation:  "New Password Confirmation"
+        Current Password:           "Current Password"
+        Back:                       "Back"
+        Submit:                     "Submit"
+        Unhappy?:                   "Unhappy?"
+        Cancel my account:          "Cancel my account"
+    passwords:
+      new:
+        Forgot your password?:    "Forgot your password?"
+        E-Mail:                   "E-Mail"
+        Send Me Instructions:     "Send Me Instructions"
+      edit:
+        Change your password:     "Change your password"
+        New Password:             "New Password"
+        Confirm New Password:     "Confirm New Password"
+        Change My Password:       "Change My Password"
+    sessions:
+      new:
+        Sign in:            "Sign In"
+        Username or Email:  "Username Or Email"
+        Password:           "Password"
+        Remember Me:        "Remember Me"
+        Login:              "Login"
+    unlocks:
+      new:
+        Resend unlock instructions:   "Resend unlock instructions"
+        E-Mail:                       "E-Mail"
+        Resend unlock instructions:   "Resend unlock instructions"
+    shared:
+      forgot_links:
+        Forgot your password?:                          "Forgot your password?"
+        Did not receive confirmation instructions?:     "Did not receive confirmation instructions?"
+        Did not receive unlock instructions?:           "Did not receive unlock instructions?"
+      links:
+        Sign in:                                        "Sign in"
+        Sign up:                                        "Sign up"
+        Forgot your password?:                          "Forgot your password?"
+        Did not receive confirmation instructions?:     "Did not receive confirmation instructions?"
+        Did not receive unlock instructions?:           "Did not receive unlock instructions?"
+        Sign in with :                                  "Sign in with "
+
+  shared:
+    extra_header:
+      Home:                   "Home"
+      Logged in as:           "Logged in as"
+      Admin:                  "Admin"
+      Profile:                "Profile"
+      Addresses:              "Addresses"
+      Logout:                 "Logout"
+      Sign up:                "Sign up"
+      Login:                  "Login"
+      Login with:             "Login with"
+      You're not currently:   "You're not currently"
+      logged in:              "logged in"
+      Orders:                 "Orders"
+    header:
+      Faee:       "Food"
+      Home:       "Home"
+      Languages:  "Languages"
+      English:    "English"
+      Greek:      "Greek"
+      Your Cart:  "Your Cart"
+    modal:
+      Close:    "Close"
+    error_messages:
+      prohibited this:  "prohibited this"
+      from being saved: "from being saved"
+
+  carts:
+    front_cart:
+      Your Cart:          "Your Cart"
+      item(s) in cart:    "item(s) in cart"
+      Empty cart:         "Remove all"
+      Checkout:           "Checkout"
+    cart:
+      Your Cart:             "Your Cart"
+      Minus One:             "Minus One"
+      Quantity:              "Quantity"
+      Product:               "Product"
+      Sub Total:             "Sub Total"
+      Continue Shopping:     "Continue shopping"
+      Empty cart:            "Remove all"
+      Confirm:               "Confirm"
+
+  orders:
+    index:
+      Your current orders:            "Your current orders"
+      Order Number:                   "Order Number"
+      Address:                        "Address"
+      Products:                       "Products"
+      Price:                          "Price"
+      State:                          "State"
+      Purchased At:                   "Purchased At"
+      Shipped At:                     "Shipped At"
+      Your order is being prepared:   "Your order is being prepared"
+      Your order is on the way:       "Your order is on the way"
+    form:
+      You should create an:                         "You should create an"
+      address:                                      "address"
+      in order to proceed:                          "in order to proceed"
+      Select a payment method:                      "Select a payment method"
+      Select an Address:                            "Select an Address"
+      First Name:                                   "First Name"
+      Last Name:                                    "Last Name"
+      Type:                                         "Type"
+      Number:                                       "Number"
+      CVV:                                          "CVV"
+      Expires on:                                   "Expires on"
+      Back to Store:                                "Back to Store"
+      Place Order:                                  "Place Order"
+      Checkout:                                     "Checkout"
+      Credit card details:                          "Credit card details"
+
+  pages:
+    show:
+      Subpages:  "Subpages"
+
+  #notices
+  Category was successfully created:  "Category was successfully created."
+  Category was successfully updated:  "Category was successfully updated."
+  Category was successfully deleted:  "Category was successfully deleted."
+
+  Setting was successfully updated: "Setting was successfully updated."
+
+  Product was successfully created: "Product was successfully created."
+  Product was successfully updated: "Product was successfully updated."
+  Product was successfully deleted: "Product was successfully deleted."
+
+  Page was successfully created: "Page was successfully created."
+  Page was successfully updated: "Page was successfully updated."
+  Page was successfully deleted: "Page was successfully deleted."
+
+  Address was successfully created: "Address was successfully created."
+  Address was successfully updated: "Address was successfully updated."
+  Address was successfully deleted: "Address was successfully deleted."
+
+  Order shipped!:           "Order shipped!"
+  Order completed!:         "Order completed!"
+  Order canceled!:          "Order canceled!"
+  Order resumed!:           "Order resumed!"
+
+  User was successfully created:      "User was successfully created."
+  User was successfully updated:      "User was successfully updated."
+  User was successfully deleted:      "User was successfully deleted."
+
+  Invalid cart:      "Invalid cart."
+  Invalid product:   "Invalid product."
+
+  Your cart is empty:           "Your cart is empty!"
+  Thank you for your order:     "Thank you for your order."
+
+  views:
+    pagination:
+      truncate:   "..."
+      next:       "Next >"
+      last:       "Last >>"
+      first:      "<< First"
+      previous:   "< Previous"
+
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: ! '%d-%m-%Y'
+      long: ! '%d %B, %Y'
+      short: ! '%d %b'
+    month_names:
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: ! '%{count} days'
+      x_minutes:
+        one: 1 minute
+        other: ! '%{count} minutes'
+      x_months:
+        one: 1 month
+        other: ! '%{count} months'
+      x_seconds:
+        one: 1 second
+        other: ! '%{count} seconds'
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: must be accepted
+      blank: can't be blank
+      confirmation: doesn't match confirmation
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      record_invalid: ! 'Validation failed: %{errors}'
+      taken: has already been taken
+      too_long:
+        one: is too long (maximum is 1 character)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        one: is too short (minimum is 1 character)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        one: is the wrong length (should be 1 character)
+        other: is the wrong length (should be %{count} characters)
+    template:
+      body: ! 'There were problems with the following fields:'
+      header:
+        one: 1 error prohibited this %{model} from being saved
+        other: ! '%{count} errors prohibited this %{model} from being saved'
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%u%n'
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: £
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', and '
+      two_words_connector: ! ' and '
+      words_connector: ! ', '
+  time:
+    am: am
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%d %B, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: pm
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors

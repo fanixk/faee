@@ -1,0 +1,13 @@
+<% if pages.present? %>
+    <ul class="nav nav-list">
+      <li>
+      <% pages.each do |page, children| %>
+        <% if page.live? %>
+            <li class="<%= 'active' if current_page?(nested_page_path(page)) %>">
+              <%= link_to page.name, nested_page_path(page) %>
+              <%= render 'navmenu_subpages', pages: children if children.present? %>
+            </li>
+        <% end %>
+      <% end %>
+    </ul>
+<% end %>

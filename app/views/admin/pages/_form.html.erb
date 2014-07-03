@@ -1,0 +1,59 @@
+<%= form_for([:admin, @page], html: { class: 'form-horizontal' }) do |f| %>
+  <%= render 'shared/error_messages', :target => @page, :name => "page" %>
+
+  <fieldset>
+
+  <div class="control-group">
+    <%= f.cktext_area :content %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :name, t('.Name'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :slug, t('.Slug'), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :slug %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :parent_id, t('.Parent'), class: "control-label" %>
+    <div class="controls">
+      <%= f.collection_select :parent_id, Page.arrange_as_array({:order => 'name'}, @page.possible_parents), :id, :name_for_selects, { include_blank: true }, { class: 'chosen-select' } %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :in_menu, t('.Show in menu?'), class: "control-label" %>
+    <div class="controls">
+      <%= f.check_box :in_menu %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :is_published, t('.Publish?'), class: "control-label" %>
+    <div class="controls">
+      <%= f.check_box :is_published %>
+    </div>
+  </div>  
+
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit :class => 'btn btn-success', :value => t('.Submit') %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= link_to admin_pages_path, :class => 'btn btn-inverse' do %>
+      <i class="icon-chevron-left icon-white"></i> <%= t('.Back to Pages') %>
+    <% end %>
+  </div>
+
+  </fieldset>
+
+<% end %>

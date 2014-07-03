@@ -1,0 +1,30 @@
+<div class="row-fluid">
+  <div class="span3 stat">
+    <div class="stat-data">
+      <span class="stat-number"><%= @total_visits %></span> 
+      visits
+      </div>
+    <span class="stat-period">Today</span>
+  </div>
+  <div class="span3 stat">
+    <div class="stat-data">
+      <span class="stat-number"><%= @total_users %></span> 
+      users
+    </div>
+    <span class="stat-period"><%= Date.today.strftime("%B %Y") %></span>
+  </div>
+  <div class="span3 stat">
+    <div class="stat-data">
+      <span class="stat-number"><%= @total_orders %></span> 
+      orders
+    </div>
+    <span class="stat-period"> this month</span>
+  </div>
+  <div class="span3 stat" style="border-right: none">
+    <div class="stat-data">
+      <span class="stat-number"><%= number_to_currency(@total_sales, unit: "€") %></span> 
+      sales
+    </div>
+    <span class="stat-period"> last 30 days</span>
+  </div>
+</div>

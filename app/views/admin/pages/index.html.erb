@@ -1,0 +1,15 @@
+<%= render 'shared/notice_messages' %>
+
+<%= link_to new_admin_page_path, :class => "btn btn-large btn-new-custom" do %>
+  <i class="icon-plus icon-white"></i> <%= t('.New Page') %>
+<% end %>
+
+<br /><br />
+
+<div id="pages" data-update-url="<%= sort_admin_pages_url %>">
+  <ul class="unstyled">
+    <%= nested_pages(@nested_pages) %>
+  </ul>
+</div>
+
+<hr />

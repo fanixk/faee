@@ -1,0 +1,26 @@
+<div id="user_det" class="clearfix muted span6">
+  <div><%= t('.Name') %>: <strong class="pull-right"><%= @user.full_name %></strong></div>
+  <div><%= t('.Email') %>: <strong class="pull-right"><%= @user.email %></strong></div>
+  <div><%= t('.Total Spent') %>: <strong class="pull-right"><%= number_to_currency(@user.total_spent , :unit => "€") %></strong></div>
+  <div><%= t('.Total Orders') %>: <strong class="pull-right"><%= @user.total_orders %></strong></div>
+</div>
+
+<div class="clearfix"></div>
+
+<div id="user_addr" class="row-fluid">
+  <legend><%= t(".User's addresses") %></legend>
+
+  <%= link_to new_admin_user_address_path(@user), :class => "btn btn-large btn-new-custom" do %>
+	    <i class="icon-plus icon-white"></i> <%= t('.New Address') %>
+	<% end %>
+
+	<%= render 'user_addresses' %>
+
+  <%= link_to admin_users_path, :class => 'btn btn-inverse' do %>
+	  <i class="icon-chevron-left icon-white"></i> <%= t('.Back to Users') %>
+	<% end %>
+	
+</div>
+
+
+

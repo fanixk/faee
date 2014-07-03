@@ -1,0 +1,76 @@
+<div class="jumbotron extra-header">
+  <div class="container row-fluid">
+
+    <figure class="logo span3 offset2">
+      <a title="<%= t('.Home') %>" href="<%= root_path %>">
+        <img src="/assets/products/missing/small/missing.png" alt="">
+      </a>
+    </figure>
+
+     <div class="primary-user-menu span4 offset1">
+      <ul>
+      <% if user_signed_in? %>
+        <li>
+          <small><%= t('.Logged in as') %> <strong><%= current_user.email %></strong>
+          </small>
+        </li><div class="clearfix"></div>
+        
+        <% if current_user.admin? %>
+          <li>
+          <%= link_to admin_root_path do %>
+              <%= t('.Admin') %> <i class="icon-dashboard"></i>
+          <% end %>
+          </li><div class="clearfix"></div>
+        <% else %>
+          <li <%= "class=active" if current_page?(orders_path) %>>
+          <%= link_to orders_path do %>
+              <%= t('.Orders') %> <i class="icon-pushpin"></i>
+          <% end %>
+          </li><div class="clearfix"></div>
+        <% end %>  
+
+        <li <%= "class=active" if current_page?(edit_user_registration_path) %>>
+        <%= link_to edit_user_registration_path do %>
+            <%= t('.Profile') %> <i class="icon-user"></i>
+        <% end %>
+        </li><div class="clearfix"></div>
+        <li <%= "class=active" if current_page?(addresses_path) %>>
+        <%= link_to addresses_path do %>
+            <%= t('.Addresses') %> <i class="icon-truck"></i>
+        <% end %>
+        </li><div class="clearfix"></div>
+        <li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+            <%= t('.Logout') %> <i class="icon-signout"></i>
+        <% end %>
+        </li><div class="clearfix"></div>
+      <% else %>
+        <li>
+          <small><%= t(".You're not currently") %> <strong><%= t(".logged in") %></strong>
+          </small>
+        </li><div class="clearfix"></div>
+        <li <%= "class=active" if current_page?(new_user_registration_path) %>>
+        <%= link_to new_user_registration_path do %>
+            <%= t('.Sign up') %> <i class="icon-magic"></i>
+        <% end %>
+        </li><div class="clearfix"></div>
+        <li <%= "class=active" if current_page?(new_user_session_path) %>>
+        <%= link_to new_user_session_path do %>
+            <%= t('.Login') %> <i class="icon-signin"></i>
+        <% end %>
+        </li><div class="clearfix"></div>
+        <li>
+        <%= link_to user_omniauth_authorize_path(:facebook) do %>
+            <%= t('.Login with') %> <i class="icon-facebook"></i>
+        <% end %>
+        </li><div class="clearfix"></div>
+        <li>
+        <%= link_to user_omniauth_authorize_path(:twitter) do %>
+            <%= t('.Login with') %> <i class="icon-twitter"></i>
+        <% end %>
+        </li><div class="clearfix"></div>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

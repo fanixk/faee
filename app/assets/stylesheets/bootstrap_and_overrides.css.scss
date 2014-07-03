@@ -1,0 +1,104 @@
+/*
+ *  This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ * Changes are meant to be of Bootstrap's core.
+ */
+$linkColor	:	#B9C45A;
+
+@import "bootstrap";
+@import "bootstrap-responsive";
+@import "font-awesome";
+
+body { 
+  padding-top: 40px; 
+  margin-bottom: 20px;
+  font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+}
+
+.table {
+  width: auto;
+  td {
+  vertical-align: middle;
+  }
+  tbody td {
+    border-right: 1px solid #eee;
+  }
+  [class^="icon-"], [class*=" icon-"] {
+    vertical-align: middle;
+  }
+}
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.nav-header {
+  text-transform: none;
+}
+
+.navbar-fixed-top {
+  margin:  0px;
+}
+
+.container-fluid {
+  padding-top: 20px;
+}
+
+#error_explanation {
+  @extend .alert;
+  @extend .alert-error;
+  @extend .alert-block; /* optional */
+}
+
+.field_with_errors {
+  @extend .control-group.error
+}
+
+.input-prepend {
+  display: block;
+}
+
+.field_with_errors {
+  display: inline;
+}
+
+.navbar-inverse .navbar-inner {
+  background-color: #41441f !important;
+  border-bottom: 3px solid #252525 !important;
+  .nav > li > a {
+    color: whitesmoke;
+  }
+  .nav > li > a:hover, .nav > li > a.active {
+      background-color: #252525 !important;
+      color: white !important;
+    }
+}
+
+.btn-navbar {
+  min-height: 20px;
+  margin: 0px !important;
+  padding: 9px 10px !important;
+}
+
+.form-horizontal .control-group {
+  margin-bottom: 10px;
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  body { 
+    padding-top: 0;
+    padding-left: 0px !important; 
+    padding-right: 0px !important; 
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+  body {
+    padding-top: 0;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+}

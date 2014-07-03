@@ -1,0 +1,35 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to root_path, id: "logo" do %>
+        <img src="/assets/products/missing/thumb/missing.png" alt="<%= Setting.store_title %>"> <%= Setting.store_title %>
+      <% end %>
+      
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <nav class="nav-collapse collapse">
+      <ul class="nav pull-right">
+          <li>
+            <%= link_to root_path do %>
+              <i class="icon-home"></i>
+            <% end %>
+          </li>
+          <% cache "root_pages" do %>
+            <% Page.live.roots.each do |page| %>
+                <li><%= link_to page.name, nested_page_path(page) %></li>
+            <% end %>
+          <% end %>
+          <li>
+            <%= link_to @cart do %>
+              <%= t('.Your Cart') %> <i class="icon-shopping-cart"></i>
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

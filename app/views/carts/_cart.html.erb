@@ -1,0 +1,40 @@
+<div class="inner-cart" data-count="<%= cart.line_items.count %>">
+	
+	<legend>
+		<%= t(".Your Cart") %>
+		<p class="lead cart-total pull-right"><strong><%= number_to_currency(cart.total_price, :unit => "€ ") %></strong></p>
+	</legend>
+
+	<div class="clearfix"></div>
+
+	<div class="well well-small">
+		<div class="row-fluid">
+			<p class="span1 muted"><%= t('.Minus One') %></p>
+	  	<p class="span2 muted"><%= t('.Quantity') %></p>
+	  	<p class="span7 muted"><%= t('.Product') %></p>
+	  	<p class="span2 muted"><%= t('.Sub Total') %></p>
+		</div>
+	  <%= render(cart.line_items.order("products.name")) %>
+	</div>
+
+	<div class="btn-group">
+		<div id="back-cart-btn">
+	    <%= link_to root_path, :class => 'btn btn-inverse' do %>
+	      <i class="icon-chevron-left"></i> <%=  t(".Continue Shopping") %>
+	    <% end %>
+	  </div>
+	  <div id="empty-cart-btn">
+		  <%= link_to cart, method: :delete, confirm: 'Are you sure?', :class => 'btn' do %>
+		    <i class="icon-remove"></i> <%=  t(".Empty cart") %>
+		  <% end %>
+		</div>
+	</div>
+	
+	<div id="checkout-btn">
+	  <%= link_to new_order_path, :class => "btn btn-success pull-right" do %>
+	    <i class="icon-ok"></i> <%= t('.Confirm') %>
+	  <% end %>
+	</div>
+
+
+</div>

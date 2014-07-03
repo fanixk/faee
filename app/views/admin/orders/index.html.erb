@@ -1,0 +1,93 @@
+<%= render 'shared/notice_messages' %>
+<%= render 'shared/modal' %>
+<button class="search-button btn btn-large btn-new-custom"><i class="icon-search icon-white"></i> <%= t('.Search / Sort') %></button>
+
+<br /><br />
+
+<%= render 'admin/shared/search', search: @search, url: search_admin_orders_path %>
+
+<table class="table table-hover table-condensed">
+  <thead>
+    <tr>
+      <th><%= sort_link @search, :id, t('.Id') %></th>
+      <th><%= sort_link @search, :purchased_at, t('.PurchasedAt') %></th>
+      <th><%= sort_link @search, :user_id, t('.FullName') %></th>
+      <th><%= sort_link @search, :address_id, t('.FullAddress') %></th>
+      <th><%= sort_link @search, :price, t('.Price') %></th>
+      <th><%= sort_link @search, :state, t('.State') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr
+        <%= "class=warning"   if order.state == 'open' %>
+        <%= "class=info"    if order.state == 'shipped' %>
+        <%= "class=success" if order.state == 'complete' %>
+        <%= "class=error" if order.state == 'canceled' %>
+      >
+        <td><%= order.id %></td>
+        <td><%= order.purchased_at.try(:strftime, "%d-%m-%Y %H:%M:%S") %></td>
+        <td><%= order.user.full_name %></td>
+        <td><%= order.address.full_address %></td>
+        <td><%= number_to_currency(order.price, :unit => "€") %></td>
+        <td><%= order.state %></td>
+        <td class="text-center">
+          <div class="btn-group">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="<%= t('.Actions') %>">
+              <i class="icon-cog icon-cog-custom"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <% if order.can_ship? %>
+                <li>
+                  <%= link_to admin_order_ship_path(order), method: 'patch' do %>
+                    <i class="icon icon-truck"></i> <%= t('.Ship') %>
+                  <% end %>
+                </li>
+              <% end %>
+
+              <% if order.can_cancel? %>
+                <li>
+                  <%= link_to admin_order_cancel_path(order), method: 'patch' do %>
+                    <i class="icon icon-remove"></i> <%= t('.Cancel') %>
+                  <% end %>
+                </li>
+              <% end %>
+
+              <% if order.can_resume? %>
+                <li>
+                  <%= link_to admin_order_resume_path(order), method: 'patch' do %>
+                    <i class="icon icon-share-alt"></i> <%= t('.Resume') %>
+                  <% end %>
+                </li>
+              <% end %>
+
+              <% if order.can_complete? %>
+                <li>
+                  <%= link_to admin_order_complete_path(order), method: 'patch' do %>
+                    <i class="icon icon-ok"></i> <%= t('.Complete') %>
+                  <% end %>
+                </li>
+              <% end %>
+
+              <% if order.complete? or order.incomplete? %>
+                <li class="disabled"><a href="#"><%= t('.No actions available') %></a></li>
+              <% end %>
+
+              <% if !order.complete? %>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to admin_order_path(order), remote: true do %>
+                    <i class="icon icon-food"></i> <%= t('.Show Products') %>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>  
+</table>
+
+<hr />
+<%= paginate @orders %>

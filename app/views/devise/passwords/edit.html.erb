@@ -1,0 +1,31 @@
+<%= devise_error_messages! %>
+<legend><%= t('.Change your password') %></legend>
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put, class: 'form-horizontal' }) do |f| %>
+  <%= f.hidden_field :reset_password_token %>
+
+  <fieldset>
+
+  <div class="control-group">
+    <%= f.label :password, t('.New Password'), class: "control-label" %>
+    <div class="controls">
+      <%= f.password_field :password, :autofocus => true %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :password_confirmation, t('.Confirm New Password'), class: "control-label" %>
+    <div class="controls">
+      <%= f.password_field :password_confirmation %>
+    </div>
+  </div>
+
+  <div class="control-group btn-group">
+    <div class="controls">
+      <%= f.submit :class => 'btn btn-success', :value => t('.Change My Password') %>
+    </div>
+  </div>
+
+  </fieldset>
+
+<% end %>

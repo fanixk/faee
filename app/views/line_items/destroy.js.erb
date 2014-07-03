@@ -1,0 +1,5 @@
+$('#cart').html("<%=j render @cart %>");
+
+if($('.inner-cart').data('count') <= 0) {
+  $('#cart').hide();
+}

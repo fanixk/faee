@@ -1,0 +1,58 @@
+<%= render 'shared/notice_messages' %>
+
+<%= link_to new_admin_user_path, :class => "btn btn-large btn-new-custom" do %>
+  <i class="icon-plus icon-white"></i> <%= t('.New User') %>
+<% end %>
+<button class="search-button btn btn-large btn-new-custom"><i class="icon-search icon-white"></i> <%= t('.Search / Sort') %></button>
+
+<br /><br />
+
+<%= render 'admin/shared/search', search: @search, url: search_admin_users_path %>
+
+<table class="table table-striped table-condensed">
+  <thead>
+    <tr>
+      <th><%= sort_link @search, :last_name, t('.Name') %></th>
+      <th><%= sort_link @search, :email, t('.E-Mail') %></th>
+      <th><%= sort_link @search, :username, t('.Username') %></th>
+      <th><%= sort_link @search, :admin, t('.Customer?') %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.full_name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.username %></td>
+        <td>
+          <% if !user.admin? %>
+            <i class='icon-check'></i>
+          <% else %>
+            <i class='icon-check-empty'></i>
+          <% end %>
+        </td>
+        <td class="text-center">
+          <%= link_to [:admin, user], :class => "icon-truck-custom", :title => I18n.t('.Info') do %>
+            <i class="icon-info-sign"></i>
+          <% end %>
+        </td>
+        <td class="text-center">
+          <%= link_to edit_admin_user_path(user), :class => "icon-edit-custom", :title => I18n.t('.Edit') do %>
+            <i class="icon-edit"></i>
+          <% end %>
+        </td>
+        <td class="text-center">
+          <%= link_to [:admin, user], :confirm => 'Are you sure?', :method => :delete, :class => "icon-delete-custom", :title => I18n.t('.Delete') do %>
+            <i class="icon-minus-sign"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr />
+<%= paginate @users %>

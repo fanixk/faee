@@ -1,0 +1,148 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require _font-awesome
+ *= require_self
+ *= require bootstrap_and_overrides
+ *= require bootstrap_flatten
+ *= require morris
+ *= require_tree .
+ */
+
+body {
+  background-color: #FEFEFE !important;
+}
+
+#logo {
+  position: absolute;
+  left: -2px;
+  padding-right: 22px;
+}
+
+.admin {
+  .row-fluid {
+    .span10 {
+      margin-top: 20px;
+      width: 79.90598%;
+    }
+  }
+}
+
+#dashboard-orders {
+  .thumbnail {
+    background-color: #F9F9F9 !important;
+    margin-top: 20px !important;
+  }
+  .thumbnail:hover {
+    background-color: #FEFEFE !important;
+    border: 1px solid #b9c45a;
+    -webkit-border: 1px solid #b9c45a;
+    -moz-border:    1px solid #b9c45a;
+  }
+  .dash_order_controls {
+    margin-top: 10px;
+  }
+  legend {
+    margin: 0px 0px 10px 0px;
+  }
+}
+
+.second-admin-menu {
+  font-size: 16px;
+  ul.nav.nav-list {
+    position: fixed;
+    top: 43px;
+    border-right-width: 1px;
+    border-right-color: #E6E7E8;
+    border-left-width:  1px;
+    border-left-color:  #E6E7E8;
+    border-top-style:   none;
+    border-right-style: solid;
+    border-bottom-style:none;
+    border-left-style:  solid;
+  }
+  i {
+    font-size: 22px;
+  }
+  .nav > li > a {
+    height: 50px;
+    width: auto;
+    line-height: 50px;
+    .hide {
+      display: inline !important;
+    }
+  }
+  .nav > li > a:hover {
+    text-decoration: none;
+    text-shadow: none;
+    background-color: #E6E7E8;
+    color: #1B1B1B;
+  }
+}
+
+.sort-field select {
+  margin-right: 5px;
+}
+
+.search-form {
+  display: none;
+  margin-bottom: 30px;
+  legend {
+    font-size: 16px;
+  }
+}
+
+.search-field {
+  padding-bottom: 5px;
+}
+
+ul.dropdown-menu li a {
+  font-size: 115%;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+/* Large desktop */
+@media (max-width: 1200px) { 
+  .second-admin-menu {
+    margin-bottom: 30px;
+    ul.nav.nav-list {
+      width: 35px;
+      position: relative;
+      top: 0px;
+      .hide {
+        display: none !important;
+      }
+    }
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+  #logo {
+    left: 5px !important;;
+  }
+  .second-admin-menu {
+    margin-bottom: 30px;
+    ul.nav.nav-list {
+      width: auto;
+      position: relative;
+      top: 10px;
+      .hide {
+        display: inline !important;
+      }
+    }
+  }
+  .admin .row-fluid .span10 {
+    width: auto !important;
+  }
+}

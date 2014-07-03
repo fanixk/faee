@@ -1,0 +1,42 @@
+<span class="lead"><%=page.name %></span>
+
+<% if page.is_published %>
+  <i class="icon-eye-open" data-toggle="tooltip" title='<%= t(".IsPublished") %>'></i>
+<% else %>
+  <i class="icon-eye-close" data-toggle="tooltip" title='<%= t(".IsNotPublished") %>'></i>
+<% end %>
+
+<div class="btn-group">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="<%= t('.Actions') %>">
+    <i class="icon-cog icon-cog-custom"></i>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+    	<%= link_to nested_page_path(page) do %>
+  			<i class="icon-fullscreen"></i> <%= t(".Show") %>
+			<% end %>
+		</li>
+    <li>
+    	<%= link_to edit_admin_page_path(page) do %>
+  			<i class="icon-edit"></i> <%= t(".Edit") %>
+			<% end %>
+		</li>
+    <li>
+    	<%= link_to new_admin_page_path(parent: page.id) do %>
+  			<i class="icon-plus-sign-alt"></i> <%= t(".Add Child") %>
+			<% end %>
+		</li>
+    <li>
+    	<%= link_to [:admin, page], :confirm => 'Are you sure?', :method => :delete do %>
+  			<i class="icon-minus-sign"></i> <%= t(".Delete") %>
+			<% end %>
+		</li>
+  </ul>
+</div>
+
+ 
+
+
+
+
+

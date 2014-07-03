@@ -1,0 +1,10 @@
+<div class="search-field">
+  <%= f.attribute_fields do |a| %>
+    <%= a.attribute_select associations: [:category] %>
+  <% end %>
+  <%= f.predicate_select %>
+  <%= f.value_fields do |v| %>
+    <%= v.text_field :value %>
+  <% end %>
+  <%= link_to t('.remove'), '#', :class => "remove_fields" %>
+</div>

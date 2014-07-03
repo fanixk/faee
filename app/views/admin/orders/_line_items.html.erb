@@ -1,0 +1,13 @@
+<div class="dash_order_products">
+	<div class="pull-right">
+		<%= t('.Total Price') %>: <strong><%= number_to_currency(order.price, :unit => "€") %></strong>
+	</div>
+	<div class="clearfix"></div>
+  <div class="well">
+  	<% order.line_items.each do |item| %>
+    	<p class="dash_order_product">
+      	<%= item.quantity %> &times; <%= item.product.name %> (<%= item.total_price %>€)
+    	</p>
+  	<% end %>
+  </div>
+</div>

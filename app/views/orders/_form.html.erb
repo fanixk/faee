@@ -1,0 +1,92 @@
+<%= form_for(@order, :html => { class: 'form-horizontal' }) do |f| %>
+  <%= render 'shared/error_messages', :target => @order, :name => "order" %>
+  
+  <fieldset>
+  <legend><%= t('.Checkout') %></legend>
+  <% if(current_user.addresses.empty?) %>
+    <div class="well lead info-sign">
+      <i class="icon icon-info-sign"></i> 
+      <%= t('.You should create an') %> 
+      <%= link_to t('.address'), new_address_path, :class => "btn btn-large" %> 
+      <%= t('.in order to proceed') %>
+     </div>
+  <% else %>
+
+    <div class="control-group">
+      <%= f.label :pay_type, t('.Select a payment method'), class: "control-label" %>
+      <div class="controls">
+        <%= f.select :pay_type, Order::PAYMENT_TYPES, {}, { class: 'chosen-select' } %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :address_id, t('.Select an Address'), class: "control-label" %>
+      <div class="controls">
+        <%= f.collection_select :address_id,
+                              current_user.addresses, 
+                              :id, 
+                              :label, 
+                              { :prompt => "" }, { class: 'chosen-select' } %>
+      </div>
+    </div>
+
+    <div id="order-credit-card">
+    <legend><%= t('.Credit card details') %></legend>
+      <div class="control-group">
+        <%= f.label :card_first_name, t(".First Name"), class: "control-label" %>
+        <div class="controls">
+          <%= f.text_field :card_first_name %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :card_last_name, t(".Last Name"), class: "control-label" %>
+        <div class="controls">
+          <%= f.text_field :card_last_name %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :card_type, t(".Type"), class: "control-label" %>
+        <div class="controls">
+          <%= f.select :card_type, [["Visa", "visa"], ["MasterCard", "master"]], { prompt: '' },  { class: 'chosen-select' } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :card_number, t(".Number"), class: "control-label" %>
+        <div class="controls">
+          <%= f.text_field :card_number %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :card_verification, t(".CVV"), class: "control-label" %>
+        <div class="controls">
+          <%= f.text_field :card_verification %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :card_expires_on, t(".Expires on"), class: "control-label" %>
+        <div class="controls">
+          <%= f.date_select :card_expires_on, :discard_day => true, 
+                          :start_year => Date.today.year, 
+                          :end_year => (Date.today.year+10),
+                          :add_month_numbers => true %>
+        </div>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+        <%= f.submit :class => 'btn btn-success', :value => t('.Place Order') %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= link_to root_path, class: "btn btn-inverse"  do %>
+        <i class="icon-chevron-left"></i> <%= t('.Back to Store') %>
+      <% end %>
+    </div>
+
+  <% end %>
+
+  </fieldset>
+
+<% end %>

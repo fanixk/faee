@@ -1,0 +1,65 @@
+// Place all the styles related to the admin/pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#pages > ul > li {
+	margin-bottom: 30px;
+}
+
+.pageDiv {
+	margin: 5px;
+	padding: 5px;
+	.lead {
+		margin-left: 20px;
+	}
+}
+
+.nested-pages {
+	padding-left: 50px;
+}
+
+.icon-fullscreen-custom{
+  color: darken(#B9C45A, 20%);
+  font-size: 22px;  
+}
+.icon-fullscreen-custom:hover {
+  text-decoration: none;
+  color: saturate(#B9C45A, 20%);
+}
+
+.icon-move-custom {
+	color: #252525;
+  font-size: 22px;
+}
+.icon-move-custom:hover {
+	text-decoration: none;
+  color: lighten(#252525, 50%);
+  cursor: move;
+}
+
+.icon-plus-custom {
+	color: darken(#945ba5, 20%);
+  font-size: 22px;
+}
+.icon-plus-custom:hover {
+	text-decoration: none;
+  color: saturate(#945ba5, 20%);
+}
+
+.icon-eye-open,
+.icon-eye-close {
+  font-size: 20px;
+  margin-right: 20px;
+  color: gray;
+}
+.icon-eye-open:hover,
+.icon-eye-close:hover {
+  margin-right: 20px;
+  color: darken(gray, 50%);
+}
+
+.ui-state-highlight {
+	height: 1.5em; 
+	border:1px solid #B9C45A;
+	width: 50% !important;
+}
