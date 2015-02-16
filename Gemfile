@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-
-gem 'rails', '3.2.13'
+ruby '2.1.2'
+gem 'rails', '3.2.15'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -69,7 +69,7 @@ group :development do
   gem 'rails_best_practices'
   gem 'brakeman'
   gem 'bullet'
-  gem 'debugger'
+  gem 'debugger2'
   gem 'ruby-graphviz', :require => 'graphviz'
   gem 'fuubar'
 end

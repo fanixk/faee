@@ -40,3 +40,4 @@ doc/
 bundler_stubs/*
 public/assets/*
 test_bak/*
+.idea/

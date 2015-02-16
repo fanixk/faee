@@ -61,7 +61,6 @@ describe User do
   it "returns complete user orders" do
     order1 = FactoryGirl.create(:order, user_id: @user.id, state: 'complete')
     order2 = FactoryGirl.create(:order, user_id: @user.id, state: 'complete')
-
     @user.complete_orders.should eq [order2,order1]
   end
 
