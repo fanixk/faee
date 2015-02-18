@@ -2,9 +2,7 @@ language: ruby
 rvm:
   - "2.0.0"
   - "2.1.2"
-  - jruby-head
   - ruby-head
-  - rbx
 
 script: 
   - bundle exec rake db:test:prepare
