@@ -11,7 +11,9 @@ rvm:
   - ruby-head
   - rbx
 
-script: bundle exec rspec spec
+script: 
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec spec
 
 before_script:
   - cp config/database.yml.travis config/database.yml
