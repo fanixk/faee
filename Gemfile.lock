@@ -246,7 +246,7 @@ GEM
       hashery (~> 2.0)
       ruby-rc4
       ttfunk
-    pg (0.16.0)
+    pg (0.18.1)
     polyamorous (0.6.3)
       activerecord (>= 3.0)
     polyglot (0.3.5)
@@ -640,7 +640,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-twitter (~> 1.0.0)
   paperclip (~> 3.4.2)
-  pg (~> 0.16.0)
+  pg (~> 0.18.1)
   prawn
   puma
   railroady
