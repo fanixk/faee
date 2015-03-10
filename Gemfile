@@ -8,7 +8,7 @@ gem 'rails', '3.2.15'
 
 # gem 'sqlite3'
 
-gem 'pg', '~> 0.16.0'
+gem 'pg', '~> 0.18.1'
 gem 'ancestry', '~> 2.0.0'
 gem 'devise'
 gem 'omniauth-twitter', '~> 1.0.0'
